@@ -36,7 +36,7 @@ const config = {
           path: "docs",
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
-          editUrl: "https://github.com/flipt-io/flipt-docs/edit/main/",
+          editUrl: "https://github.com/flipt-io/docs/edit/main/",
         },
         blog: false,
         theme: {
