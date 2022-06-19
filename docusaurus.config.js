@@ -86,7 +86,7 @@ const config = {
             items: [
               {
                 label: "Discord",
-                href: "https://discordapp.com/invite/flipt",
+                href: "https://discord.gg/kRhEqG2TEZ",
               },
               {
                 label: "Twitter",
