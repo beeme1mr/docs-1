@@ -54,6 +54,7 @@ const config = {
         logo: {
           alt: "Flipt",
           src: "img/logo.svg",
+          href: "https://flipt.io",
         },
         items: [
           {
