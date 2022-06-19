@@ -1,6 +1,10 @@
 # Flipt Docs
 
-This is the future documentation home of Flipt.
+This is the documentation home of [Flipt](https://flipt.io).
+
+![Docusaurus](https://docusaurus.io/img/docusaurus.svg)
+
+Built with [Docusaurus](https://docusaurus.io/docs).
 
 ### Installation
 
