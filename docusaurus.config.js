@@ -113,8 +113,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Mark Phelps.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: require("prism-react-renderer/themes/dracula"),
       },
     }),
 };
