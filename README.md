@@ -1,6 +1,6 @@
-# Flipt.io
+# Flipt Docs
 
-This is the future home of Flipt.io.
+This is the future documentation home of Flipt.
 
 ### Installation
 
