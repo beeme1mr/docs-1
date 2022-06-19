@@ -53,6 +53,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: "moving",
+        content:
+          '🎉 The Flipt codebase will be moving to the new <a target="_blank" rel="noopener noreferrer" href="https://github.com/flipt-io/">Flipt organization</a> in the coming weeks!',
+        backgroundColor: "#ded1f3",
+        textColor: "#091E42",
+        isCloseable: false,
+      },
       navbar: {
         title: "Flipt",
         logo: {
