@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Flipt",
   tagline: "An open-source, on-prem feature flag solution",
-  url: "https:/flipt.io",
+  url: "https://flipt.io",
   baseUrl: "/docs/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
@@ -41,6 +41,10 @@ const config = {
         blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+        },
+        gtag: {
+          trackingID: "G-320038597",
+          anonymizeIP: true,
         },
       }),
     ],
