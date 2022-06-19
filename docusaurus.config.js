@@ -64,8 +64,9 @@ const config = {
           },
           {
             href: "https://github.com/markphelps/flipt",
-            label: "GitHub",
             position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
