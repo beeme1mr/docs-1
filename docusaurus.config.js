@@ -104,7 +104,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Mark Phelps. Built with <a href="https://docusaurus.io/">Docusaurus</a>.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Mark Phelps.`,
       },
       prism: {
         theme: lightCodeTheme,
