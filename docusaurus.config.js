@@ -10,7 +10,7 @@ const config = {
   tagline: "An open-source, on-prem feature flag solution",
   url: "https:/flipt.io",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
@@ -33,10 +33,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: "content",
+          path: "docs",
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
-          editUrl: "https://github.com/flipt-io/docs/edit/main/",
+          editUrl: "https://github.com/flipt-io/flipt-docs/edit/main/",
         },
         blog: false,
         theme: {
@@ -63,7 +63,7 @@ const config = {
             label: "Documentation",
           },
           {
-            href: "https://github.com/flipt-io/flipt",
+            href: "https://github.com/markphelps/flipt",
             label: "GitHub",
             position: "right",
           },
@@ -77,7 +77,7 @@ const config = {
             items: [
               {
                 label: "Getting Started",
-                to: "/docs/getting_started",
+                to: "/getting_started",
               },
             ],
           },
@@ -99,7 +99,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/flipt-io/flipt",
+                href: "https://github.com/markphelps/flipt",
               },
             ],
           },
