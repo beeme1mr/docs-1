@@ -97,17 +97,17 @@ This will load the API documentation which documents valid requests/responses to
 
 ### Generate
 
-You can use [swagger-codegen](https://github.com/swagger-api/swagger-codegen) to generate client code in your preferred language from the OpenAPI v2 specification linked above.
+You can use [swagger-codegen](https://github.com/swagger-api/swagger-codegen) or [openapi-generator](https://openapi-generator.tech/) to generate client code in your preferred language from the OpenAPI v2 specification linked above.
 
-While generating clients in all languages supported by swagger-codegen is outside of the scope of this documentation, an example of generating a Java client is below.
+While generating clients is outside of the scope of this documentation, an example of generating a Java client with the `openapi-generator` is below.
 
 #### Java Example
 
-1. Install `swagger-codegen`: [https://github.com/swagger-api/swagger-codegen#prerequisites](https://github.com/swagger-api/swagger-codegen#prerequisites)
-1. Generate using `swagger-codegen` to desired location:
+1. Install `openapi-generator`: [https://openapi-generator.tech/docs/installation](https://openapi-generator.tech/docs/installation)
+1. Generate using `openapi-generator-cli` to desired location:
 
 ```bash
-swagger-codegen generate -i swagger/api/swagger.json -l java -o /tmp/flipt/java
+openapi-generator generate -i flipt.swagger.json -g java -o /tmp/flipt/java
 ```
 
 ## Third-Party Client Libraries
