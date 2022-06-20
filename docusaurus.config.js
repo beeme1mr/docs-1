@@ -9,7 +9,7 @@ const config = {
   title: "Flipt",
   tagline: "An open-source, on-prem feature flag solution",
   url: "https://flipt.io",
-  baseUrl: "/",
+  baseUrl: "/docs/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -35,7 +35,7 @@ const config = {
         docs: {
           path: "docs",
           sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: "/docs",
+          routeBasePath: "/",
           editUrl: "https://github.com/flipt-io/docs/edit/main/",
         },
         blog: false,
