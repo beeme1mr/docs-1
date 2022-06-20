@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Configuration
 
 There are two ways to configure Flipt: using a configuration file or through environment variables.
