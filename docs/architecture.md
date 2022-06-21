@@ -2,19 +2,11 @@
 sidebar_position: 7
 ---
 
-import ThemedImage from "@theme/ThemedImage";
-
 # Architecture
 
 The overall Flipt server architecture is shown in this diagram:
 
-<ThemedImage
-  alt="Flipt Architecture"
-  sources={{
-    light: require("./img/architecture/flipt-light.png").default,
-    dark: require("./img/architecture/flipt-dark.png").default,
-  }}
-/>
+![Flipt Architecture](./img/architecture/flipt.png)
 
 :::info
 Arrows indicate request or connection initiation direction, not necessarily dataflow direction.
