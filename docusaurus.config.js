@@ -53,6 +53,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: "img/banner_og.png",
       announcementBar: {
         id: "moving",
         content:
