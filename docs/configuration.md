@@ -1,4 +1,5 @@
 ---
+id: "configuration"
 sidebar_position: 6
 ---
 

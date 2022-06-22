@@ -1,10 +1,11 @@
 ---
+id: "concepts"
 sidebar_position: 3
 ---
 
 # Concepts
 
-This document describes the basic concepts of Flipt. More information on how to use Flipt is noted in the [Getting Started](./getting_started) documentation.
+This document describes the basic concepts of Flipt. More information on how to use Flipt is noted in the [Getting Started](/) documentation.
 
 ## Flags
 

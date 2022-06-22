@@ -1,4 +1,5 @@
 ---
+id: "architecture"
 sidebar_position: 7
 ---
 
@@ -34,7 +35,7 @@ The REST API is served under `/api/v1` and allows all actions that the client SD
 
 The Flipt Web UI is a modern, minimalist UI to allow you to easily setup and monitor your feature flags and experiments. It's served as a JavaScript Single Page Application (SPA) and communicates with the Flipt Backend Service through the REST API.
 
-A guide to using the UI for the first time can be found in the [Getting Started](./getting_started.md) documentation.
+A guide to using the UI for the first time can be found in the [Getting Started](/) documentation.
 
 ## Database
 

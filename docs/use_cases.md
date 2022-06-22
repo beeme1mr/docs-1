@@ -1,4 +1,5 @@
 ---
+id: "use_cases"
 sidebar_position: 2
 ---
 
@@ -32,7 +33,7 @@ if res.Enabled {
 
 ## Percentage Rollouts
 
-Variant testing can be accomplished by setting up a percentage rollout rule in Flipt. See [Getting Started](./getting_started) to learn how to accomplish this.
+Variant testing can be accomplished by setting up a percentage rollout rule in Flipt. See [Getting Started](/) to learn how to accomplish this.
 
 In this example rule, we have two variants that we are targeting, `group-a` and `group-b`, each with a 50% distribution.
 
