@@ -9,10 +9,6 @@ The overall Flipt server architecture is shown in this diagram:
 
 ![Flipt Architecture](./img/architecture/flipt.png)
 
-:::info
-Arrows indicate request or connection initiation direction, not necessarily dataflow direction.
-:::
-
 The Flipt application is made up of three main components:
 
 - Flipt Backend Service
