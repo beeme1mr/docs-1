@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Flipt",
-  tagline: "An open-source, on-prem feature flag solution",
+  tagline: "An open source, self-hosted feature flag solution",
   url: "https://flipt.io",
   baseUrl: "/docs/",
   onBrokenLinks: "ignore",
