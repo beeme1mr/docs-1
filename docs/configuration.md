@@ -77,7 +77,7 @@ These properties are as follows:
 
 All options in the configuration file can be overridden using environment variables using the syntax:
 
-```shell
+```console
 FLIPT_<SectionName>_<KeyName>
 ```
 
@@ -97,7 +97,7 @@ db:
 
 You can override them using:
 
-```shell
+```console
 export FLIPT_SERVER_GRPC_PORT=9001
 export FLIPT_DB_URL="postgres://postgres@localhost:5432/flipt?sslmode=disable"
 ```
@@ -146,7 +146,7 @@ From time to time the Flipt database must be updated with new schema. To accompl
 
 If Flipt is started and there are pending migrations, you will see the following error in the console:
 
-```bash
+```console
 migrations pending, please backup your database and run `flipt migrate`
 ```
 
@@ -158,7 +158,7 @@ You should backup your database before running `flipt migrate` to ensure that no
 
 If running Flipt via Docker, you can run the migrations in a separate container before starting Flipt by running:
 
-```bash
+```console
 docker run -it markphelps/flipt:latest /bin/sh -c './flipt migrate'
 ```
 
@@ -172,13 +172,13 @@ To import previously exported Flipt data, use the `flipt import` command. You ca
 
 To import from STDIN, Flipt requires the `--stdin` flag:
 
-```bash
+```console
 cat flipt.yaml | flipt import --stdin
 ```
 
 If not importing using `--stdin`, Flipt requires the file to be imported as an argument:
 
-```bash
+```console
 flipt import flipt.yaml
 ```
 
@@ -194,7 +194,7 @@ To export Flipt data, use the `flipt export` command.
 
 By default, `export` will output to STDOUT:
 
-```bash
+```console
 $ flipt export
 
 flags:
@@ -211,7 +211,7 @@ flags:
 
 You can also export to a file using the `-o filename` or `--output filename` flags:
 
-```bash
+```console
 flipt export -o flipt.yaml
 ```
 
@@ -285,7 +285,7 @@ meta:
 
 #### Environment Variable
 
-```bash
+```console
 export FLIPT_TELEMETRY_ENABLED=false
 ```
 
