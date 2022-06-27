@@ -59,7 +59,7 @@ Below are two examples on how to generate Flipt clients in both Go and Ruby.
 1. Follow setup here: [https://grpc.io/docs/quickstart/go/](https://grpc.io/docs/quickstart/go/)
 2. Generate using protoc to desired location:
 
-```bash
+```console
 $ protoc -I ./rpc --go_out=plugins=grpc:/tmp/flipt/go ./rpc/flipt.proto
 $ cd /tmp/flipt/go/flipt
 $ ls
@@ -71,7 +71,7 @@ flipt.pb.go          flipt_pb.rb          flipt_services_pb.
 1. Follow setup here: [https://grpc.io/docs/quickstart/ruby/](https://grpc.io/docs/quickstart/ruby/)
 2. Generate using protoc to desired location:
 
-```bash
+```console
 $ grpc_tools_ruby_protoc -I ./rpc --ruby_out=/tmp/flipt/ruby --grpc_out=/tmp/flipt/ruby ./rpc/flipt.proto
 $ cd /tmp/flipt/ruby
 $ ls
@@ -107,7 +107,7 @@ While generating clients is outside of the scope of this documentation, an examp
 1. Install `openapi-generator`: [https://openapi-generator.tech/docs/installation](https://openapi-generator.tech/docs/installation)
 1. Generate using `openapi-generator-cli` to desired location:
 
-```bash
+```console
 openapi-generator generate -i flipt.swagger.json -g java -o /tmp/flipt/java
 ```
 

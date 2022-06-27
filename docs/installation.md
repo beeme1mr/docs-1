@@ -15,7 +15,7 @@ Docker installation is required on the host, see the [official installation docs
 
 ### Run the image
 
-```shell
+```console
 docker run -d \
     -p 8080:8080 \
     -p 9000:9000 \
@@ -47,13 +47,39 @@ After starting the container you can visit [http://0.0.0.0:8080](http://0.0.0.0:
 Flipt runs without root in the Docker container as of [v1.6.1](https://github.com/markphelps/flipt/releases/tag/v1.6.1).
 :::
 
-## Download from GitHub
+## Kubernetes/Helm
+
+You can run Flipt in Kubernetes using the Flipt [Helm](https://helm.sh) chart.
+
+:::note
+The Flipt Helm chart is still a work in progress. Any issues or suggestions on how to improve it are welcome in the [chart repository](https://github.com/flipt-io/helm-charts).
+:::
+
+### Prerequisites
+
+[Helm](https://helm.sh) must be installed to use the chart. Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
+
+Once Helm is set up properly, add the Flipt Helm repo as follows:
+
+```console
+helm repo add flipt https://helm.flipt.io
+```
+
+### Installing
+
+You can install the Flipt Helm chart with the following command:
+
+```console
+helm install flipt flipt/flipt
+```
+
+## Binary
 
 You can always download the latest release archive of Flipt from the [Releases](https://github.com/markphelps/flipt/releases) section on GitHub.
 
 Download to an accessible location on your host and un-zip with the following commands (requires [jq](https://stedolan.github.io/jq/)):
 
-```shell
+```console
 $ export FLIPT_VERSION=$(curl --silent "https://api.github.com/repos/markphelps/flipt/releases/latest" | jq '.tag_name?' | tr -d '"' | tr -d 'v')
 $ curl -L "https://github.com/markphelps/flipt/releases/download/v${FLIPT_VERSION}/flipt_${FLIPT_VERSION}_linux_x86_64.tar.gz" -o flipt.tar.gz && \
     tar -xvf flipt.tar.gz && \
@@ -68,7 +94,7 @@ You will need to update the config file: `default.yml` if your migrations and da
 
 Run the Flipt binary with:
 
-```shell
+```console
 ./flipt --config PATH_TO_YOUR_CONFIG
 ```
 
