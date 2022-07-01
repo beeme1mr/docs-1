@@ -39,8 +39,8 @@ An example Go application exists at [https://github.com/markphelps/flipt/example
 
 Prebuilt Flipt GRPC clients are currently available for the following languages:
 
-- Go: [https://github.com/markphelps/flipt-grpc-go](https://github.com/markphelps/flipt-grpc-go)
-- Ruby: [https://github.com/markphelps/flipt-grpc-ruby](https://github.com/markphelps/flipt-grpc-ruby)
+- Go: [https://github.com/flipt-io/flipt-grpc-go](https://github.com/flipt-io/flipt-grpc-go)
+- Ruby: [https://github.com/flipt-io/flipt-grpc-ruby](https://github.com/flipt-io/flipt-grpc-ruby)
 
 If your language is not listed, please see the section below on how to generate a native GRPC client manually. If you choose to open source this client, please submit a pull request so I can add it to the docs.
 
