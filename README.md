@@ -9,7 +9,7 @@ Built with [Docusaurus](https://docusaurus.io/docs).
 
 This project is released under the [MIT License](LICENSE).
 
-[flipt]: https://github.com/markphelps/flipt
+[flipt]: https://github.com/flipt-io/flipt
 [docs]: https://flipt.io/docs/getting_started
 [issues]: https://github.com/flipt-io/docs/issues
 [pulls]: https://github.com/flipt-io/docs/pulls

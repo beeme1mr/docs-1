@@ -57,7 +57,7 @@ const config = {
       announcementBar: {
         id: "moving",
         content:
-          '🎉 The Flipt codebase will be moving to the new <a target="_blank" rel="noopener noreferrer" href="https://github.com/flipt-io/">Flipt organization</a> in the coming weeks!',
+          '🎉 The Flipt codebase has moved to the new <a target="_blank" rel="noopener noreferrer" href="https://github.com/flipt-io/">Flipt organization</a>!',
         backgroundColor: "#ded1f3",
         textColor: "#091E42",
         isCloseable: false,
@@ -77,7 +77,7 @@ const config = {
             label: "Documentation",
           },
           {
-            href: "https://github.com/markphelps/flipt",
+            href: "https://github.com/flipt-io/flipt",
             position: "right",
             className: "header-github-link",
             "aria-label": "GitHub repository",
@@ -114,7 +114,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/markphelps/flipt",
+                href: "https://github.com/flipt-io/flipt",
               },
             ],
           },

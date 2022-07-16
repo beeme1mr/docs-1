@@ -9,14 +9,14 @@ There are two ways to configure Flipt: using a configuration file or through env
 
 ## Configuration File
 
-The default way that Flipt is configured is with the use of a configuration file [default.yml](https://github.com/markphelps/flipt/blob/master/config/default.yml).
+The default way that Flipt is configured is with the use of a configuration file [default.yml](https://github.com/flipt-io/flipt/blob/main/config/default.yml).
 
 This file is read when Flipt starts up and configures several important properties for the server.
 
 You can edit any of these properties to your liking, and on restart Flipt will pick up the new changes.
 
 :::info
-These defaults are commented out in [default.yml](https://github.com/markphelps/flipt/blob/master/config/default.yml) to give you an idea of what they are. To change them you'll first need to uncomment them.
+These defaults are commented out in [default.yml](https://github.com/flipt-io/flipt/blob/main/config/default.yml) to give you an idea of what they are. To change them you'll first need to uncomment them.
 :::
 
 These properties are as follows:
@@ -164,7 +164,7 @@ docker run -it markphelps/flipt:latest /bin/sh -c './flipt migrate'
 
 ## Import/Export
 
-Flipt supports importing and exporting your feature flag data since [v0.13.0](https://github.com/markphelps/flipt/releases/tag/v0.13.0).
+Flipt supports importing and exporting your feature flag data since [v0.13.0](https://github.com/flipt-io/flipt/releases/tag/v0.13.0).
 
 ### Import
 
@@ -268,7 +268,7 @@ Flipt developers rely on anonymous usage data to help prioritize new features an
 
 - Flipt version
 
-You can view the full schema of the telemetry data on [GitHub](https://github.com/markphelps/flipt/blob/05b85f6ec704d9eac850984c16d9bc3d15dbdb6c/internal/telemetry/telemetry.go#L26-L30).
+You can view the full schema of the telemetry data on [GitHub](https://github.com/flipt-io/flipt/blob/05b85f6ec704d9eac850984c16d9bc3d15dbdb6c/internal/telemetry/telemetry.go#L26-L30).
 
 We use [Segment](https://segment.com) to collect the data. Only the creator of Flipt has access to the data.
 
@@ -309,16 +309,16 @@ go_gc_duration_seconds_count 5
 ...
 ```
 
-There is an [example](https://github.com/markphelps/flipt/tree/master/examples/prometheus) provided in the GitHub repository showing how to setup Flipt with Prometheus.
+There is an [example](https://github.com/flipt-io/flipt/tree/main/examples/prometheus) provided in the GitHub repository showing how to setup Flipt with Prometheus.
 
 ## Tracing
 
 Flipt supports distributed tracing via the [OpenTracing](https://opentracing.io/) protocol and [Jaeger](https://www.jaegertracing.io/) library. Enable tracing via the configuration values described above and point Flipt to your Jaeger host to record spans.
 
-There is an [example](https://github.com/markphelps/flipt/tree/master/examples/tracing) provided in the GitHub repository showing how to setup Flipt with Jaeger.
+There is an [example](https://github.com/flipt-io/flipt/tree/main/examples/tracing) provided in the GitHub repository showing how to setup Flipt with Jaeger.
 
 ## Authentication
 
 There is currently no built in authentication, authorization or encryption as Flipt was designed to work inside your trusted architecture and not be exposed publicly. If you wish to expose the Flipt dashboard and REST API publicly using HTTP Basic Authentication, you can do so by using a reverse proxy.
 
-There is an [example](https://github.com/markphelps/flipt/tree/master/examples/auth) provided in the GitHub repository showing how this can work.
+There is an [example](https://github.com/flipt-io/flipt/tree/main/examples/auth) provided in the GitHub repository showing how this can work.

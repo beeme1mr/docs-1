@@ -44,7 +44,7 @@ If you don't use mounted volumes to persist your data, your data will be lost wh
 After starting the container you can visit [http://0.0.0.0:8080](http://0.0.0.0:8080) to view the application.
 
 :::info
-Flipt runs without root in the Docker container as of [v1.6.1](https://github.com/markphelps/flipt/releases/tag/v1.6.1).
+Flipt runs without root in the Docker container as of [v1.6.1](https://github.com/flipt-io/flipt/releases/tag/v1.6.1).
 :::
 
 ## Kubernetes/Helm
@@ -75,13 +75,13 @@ helm install flipt flipt/flipt
 
 ## Binary
 
-You can always download the latest release archive of Flipt from the [Releases](https://github.com/markphelps/flipt/releases) section on GitHub.
+You can always download the latest release archive of Flipt from the [Releases](https://github.com/flipt-io/flipt/releases) section on GitHub.
 
 Download to an accessible location on your host and un-zip with the following commands (requires [jq](https://stedolan.github.io/jq/)):
 
 ```console
-$ export FLIPT_VERSION=$(curl --silent "https://api.github.com/repos/markphelps/flipt/releases/latest" | jq '.tag_name?' | tr -d '"' | tr -d 'v')
-$ curl -L "https://github.com/markphelps/flipt/releases/download/v${FLIPT_VERSION}/flipt_${FLIPT_VERSION}_linux_x86_64.tar.gz" -o flipt.tar.gz && \
+$ export FLIPT_VERSION=$(curl --silent "https://api.github.com/repos/flipt-io/flipt/releases/latest" | jq '.tag_name?' | tr -d '"' | tr -d 'v')
+$ curl -L "https://github.com/flipt-io/flipt/releases/download/v${FLIPT_VERSION}/flipt_${FLIPT_VERSION}_linux_x86_64.tar.gz" -o flipt.tar.gz && \
     tar -xvf flipt.tar.gz && \
     chmod +x ./flipt
 ```
