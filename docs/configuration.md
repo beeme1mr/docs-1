@@ -51,11 +51,26 @@ These properties are as follows:
 
 ### Cache
 
-| Property                         | Description                                                | Default          | Since   |
-| -------------------------------- | ---------------------------------------------------------- | ---------------- | ------- |
-| `cache.memory.enabled`           | Enable in-memory caching                                   | false            |         |
-| `cache.memory.expiration`        | Duration at which cache items are considered expired       | -1 (none)        | v0.12.0 |
-| `cache.memory.eviction_interval` | Interval at which expired items are evicted from the cache | 10m (10 minutes) | v0.12.0 |
+| Property        | Description                                                 | Default | Since   |
+| --------------- | ----------------------------------------------------------- | ------- | ------- |
+| `cache.enabled` | Enable caching of data                                      | false   | v1.10.0 |
+| `cache.ttl`     | Time to live for cached data                                | 60s     | v1.10.0 |
+| `cache.backend` | The backend to use for caching (options: `memory`, `redis`) | memory  | v1.10.0 |
+
+#### Memory Cache
+
+| Property                         | Description                                                          | Default | Since   |
+| -------------------------------- | -------------------------------------------------------------------- | ------- | ------- |
+| `cache.memory.eviction_interval` | Interval at which expired items are evicted from the in-memory cache | 5m      | v0.12.0 |
+
+#### Redis Cache
+
+| Property               | Description                           | Default   | Since   |
+| ---------------------- | ------------------------------------- | --------- | ------- |
+| `cache.redis.host`     | Host to access the Redis database     | localhost | v1.10.0 |
+| `cache.redis.port`     | Port to access the Redis database     | 6379      | v1.10.0 |
+| `cache.redis.db`       | Redis database to use                 | 0         | v1.10.0 |
+| `cache.redis.password` | Password to access the Redis database |           | v1.10.0 |
 
 ### Database
 
@@ -72,6 +87,14 @@ These properties are as follows:
 | `db.max_open_conn`     | The maximum number of open connections to the database                       | unlimited                    | v0.17.0 |
 | `db.conn_max_lifetime` | Sets the maximum amount of time in which a connection can be reused          | unlimited                    | v0.17.0 |
 | `db.migrations.path`   | Where the Flipt database migration files are kept                            | /etc/flipt/config/migrations |         |
+
+## Deprecations
+
+From time to time configuration options will need to be deprecated and eventually removed. Deprecated configuration options will be removed after ~6 months from the time they were deprecated.
+
+All deprecated configuration options will be removed from the documentation, however they will still work as expected until they are removed. A warning will be logged in the Flipt logs when a deprecated configuration option is used.
+
+All deprecated options are listed in the [DEPRECATIONS](https://github.com/flipt-io/flipt/blob/main/DEPRECATIONS.md) file in the Flipt repository as well as the [CHANGELOG](https://github.com/flipt-io/flipt/blob/main/CHANGELOG.md).
 
 ## Environment Variables
 
@@ -159,7 +182,7 @@ You should backup your database before running `flipt migrate` to ensure that no
 If running Flipt via Docker, you can run the migrations in a separate container before starting Flipt by running:
 
 ```console
-docker run -it markphelps/flipt:latest /bin/sh -c './flipt migrate'
+docker run -it flipt/flipt:latest /bin/sh -c './flipt migrate'
 ```
 
 ## Import/Export
@@ -217,34 +240,29 @@ flipt export -o flipt.yaml
 
 ## Caching
 
-Flipt supports an in-memory cache to enable faster reads and evaluations. Enabling in-memory cache has been shown to speed up read performance by several orders of magnitude.
+Flipt supports both in-memory cache as well as Redis to enable faster reads and evaluations. Enabling caching has been shown to speed up read performance by several orders of magnitude.
 
 :::caution
-Enabling in-memory caching when running more than one instance of Flipt is not advised as it may lead to unpredictable results.
+Enabling in-memory caching when running more than one instance of Flipt is not advised as it may lead to unpredictable results. It is recommened to use Redis instead if you are running more than one instance of Flipt.
 :::
 
 Caching works as follows:
 
-- All reads go through the cache
-- All writes flush the **entire cache** to ensure the cache is kept up to date
+- All flag reads and evaluation requests go through the cache
+- Flag cache entries are purged whenever a write to a flag or it's variants occur or the TTL expires
+- Evaluation cache entries are purged after the TTL expires only
 - A cache miss will fetch the item from the database and add the item to the cache for the next read
 - A cache hit will simply return the item from the cache, not interacting with the database
 
-To enable caching set the following in your config:
-
-```yaml
-cache:
-  memory:
-    enabled: true
-```
+See the [Cache](#cache) section for how to configure caching.
 
 ### Expiration/Eviction
 
 You can also configure an optional duration at which items in the cache are marked as expired.
 
-For example, if you set the cache expiration to `5m`, items that have been in the cache for longer than 5 minutes will be marked as expired, meaning the next read for that item will hit the database.
+For example, if you set the cache TTL to `5m`, items that have been in the cache for longer than 5 minutes will be marked as expired, meaning the next read for that item will hit the database.
 
-Setting an eviction interval will automatically remove expired items from your cache at a defined period.
+Setting an eviction interval (in-memory cache only) will automatically remove expired items from your cache at a defined period.
 
 :::info
 The combination of cache expiration and eviction can help lessen the amount of memory your cache uses, as infrequently accessed items will be removed over time.
@@ -254,9 +272,10 @@ To tune the expiration and eviction interval of the cache set the following in y
 
 ```yaml
 cache:
+  enabled: true
+  backend: memory
+  ttl: 5m # items older than 5 minutes will be marked as expired
   memory:
-    enabled: true
-    expiration: 5m # items older than 5 minutes will be marked as expired
     eviction_interval: 2m # expired items will be evicted from the cache every 2 minutes
 ```
 

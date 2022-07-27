@@ -55,9 +55,7 @@ const config = {
     ({
       image: "img/banner_og.png",
       announcementBar: {
-        id: "moving",
-        content:
-          '🎉 The Flipt codebase has moved to the new <a target="_blank" rel="noopener noreferrer" href="https://github.com/flipt-io/">Flipt organization</a>!',
+        content: "🎉 Flipt v1.10.0 is out with support for Redis caching!",
         backgroundColor: "#ded1f3",
         textColor: "#091E42",
         isCloseable: false,

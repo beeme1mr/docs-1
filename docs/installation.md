@@ -20,7 +20,7 @@ docker run -d \
     -p 8080:8080 \
     -p 9000:9000 \
     -v $HOME/flipt:/var/opt/flipt \
-    markphelps/flipt:latest
+    flipt/flipt:latest
 ```
 
 This will download the image and start a Flipt container and publish ports needed to access the UI and backend server. All persistent Flipt data will be stored in `$HOME/flipt`.
