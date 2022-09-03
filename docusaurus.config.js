@@ -117,7 +117,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Mark Phelps.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Flipt Software Inc.`,
       },
       prism: {
         theme: require("prism-react-renderer/themes/dracula"),
