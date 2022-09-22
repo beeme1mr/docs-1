@@ -23,19 +23,21 @@ These properties are as follows:
 
 ### General
 
-| Property                 | Description                                                                        | Default               | Since   |
-| ------------------------ | ---------------------------------------------------------------------------------- | --------------------- | ------- |
-| `log.level`              | Level at which messages are logged (trace, debug, info, warn, error, fatal, panic) | info                  |         |
-| `log.file`               | File to log to instead of STDOUT                                                   |                       | v0.10.0 |
-| `ui.enabled`             | Enable UI and API docs                                                             | true                  |         |
-| `cors.enabled`           | Enable CORS support                                                                | false                 | v0.7.0  |
-| `cors.allowed_origins`   | Sets Access-Control-Allow-Origin header on server                                  | "\*" (all domains)    | v0.7.0  |
-| `tracing.jaeger.enabled` | Enable tracing support with Jaeger                                                 | false                 | v0.17.0 |
-| `tracing.jaeger.host`    | The UDP host destination to report spans                                           | localhost             | v0.17.0 |
-| `tracing.jaeger.port`    | The UDP port destination to report spans                                           | 6831                  | v0.17.0 |
-| `meta.check_for_updates` | Enable check for newer versions of Flipt on startup                                | true                  | v0.17.0 |
-| `meta.telemetry_enabled` | Enable anonymous telemetry data (see [Telemetry](#telemetry))                      | true                  | v1.8.0  |
-| `meta.state_directory`   | Directory on the host to store local state                                         | `$HOME/.config/flipt` | v1.8.0  |
+| Property                 | Description                                                                             | Default               | Since   |
+| ------------------------ | --------------------------------------------------------------------------------------- | --------------------- | ------- |
+| `log.level`              | Level at which messages are logged (trace, debug, info, warn, error, fatal, panic)      | info                  |         |
+| `log.grpc_level`         | Level at which gRPC messages are logged (trace, debug, info, warn, error, fatal, panic) | error                 | v1.12.0 |
+| `log.file`               | File to log to instead of STDOUT                                                        |                       | v0.10.0 |
+| `log.encoding`           | Encoding to use for logging (json, console)                                             | console               | v1.12.0 |
+| `ui.enabled`             | Enable UI and API docs                                                                  | true                  |         |
+| `cors.enabled`           | Enable CORS support                                                                     | false                 | v0.7.0  |
+| `cors.allowed_origins`   | Sets Access-Control-Allow-Origin header on server                                       | "\*" (all domains)    | v0.7.0  |
+| `tracing.jaeger.enabled` | Enable tracing support with Jaeger                                                      | false                 | v0.17.0 |
+| `tracing.jaeger.host`    | The UDP host destination to report spans                                                | localhost             | v0.17.0 |
+| `tracing.jaeger.port`    | The UDP port destination to report spans                                                | 6831                  | v0.17.0 |
+| `meta.check_for_updates` | Enable check for newer versions of Flipt on startup                                     | true                  | v0.17.0 |
+| `meta.telemetry_enabled` | Enable anonymous telemetry data (see [Telemetry](#telemetry))                           | true                  | v1.8.0  |
+| `meta.state_directory`   | Directory on the host to store local state                                              | `$HOME/.config/flipt` | v1.8.0  |
 
 ### Server
 
