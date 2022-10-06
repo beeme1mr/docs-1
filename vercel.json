@@ -1,0 +1,10 @@
+{
+  "outputDirectory": "build/docs",
+  "rewrites": [
+    {
+      "source": "/docs/:asset*",
+      "destination": "https://docs-flipt.vercel.app/:asset*"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
