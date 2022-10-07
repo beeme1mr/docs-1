@@ -3,8 +3,18 @@
   "rewrites": [
     {
       "source": "/docs/:asset*",
-      "destination": "https://docs-flipt.vercel.app/:asset*"
+      "destination": "/:asset*"
     },
     { "source": "/(.*)", "destination": "/" }
-  ]
+  ],
+  "redirects": [
+    {
+      "source": "/docs/getting_started",
+      "destination": "/docs/",
+      "permanent": true
+    }
+  ],
+  "github": {
+    "silent": true
+  }
 }
