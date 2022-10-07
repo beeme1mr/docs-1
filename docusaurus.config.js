@@ -12,7 +12,7 @@ const config = {
   baseUrl: "/docs/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.svg",
+  favicon: "https://www.flipt.io/favicon.svg",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -59,7 +59,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "img/banner_og.png",
+      image: "https://www.flipt.io/img/banner_og.png",
       // announcementBar: {
       //   content: "🎉 Flipt v1.10.0 is out with support for Redis caching!",
       //   backgroundColor: "#ded1f3",
