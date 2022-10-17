@@ -76,19 +76,19 @@ These properties are as follows:
 
 ### Database
 
-| Property               | Description                                                                  | Default                      | Since   |
-| ---------------------- | ---------------------------------------------------------------------------- | ---------------------------- | ------- |
-| `db.url`               | URL to access Flipt database                                                 | file:/var/opt/flipt/flipt.db |         |
-| `db.protocol`          | Protocol (Sqlite, MySQL, Postgres) for Flipt database (URL takes precedence) |                              | v0.18.0 |
-| `db.host`              | Host to access Flipt database (URL takes precedence)                         |                              | v0.18.0 |
-| `db.port`              | Port to access Flipt database (URL takes precedence)                         |                              | v0.18.0 |
-| `db.name`              | Name of Flipt database (URL takes precedence)                                |                              | v0.18.0 |
-| `db.user`              | User to access Flipt database (URL takes precedence)                         |                              | v0.18.0 |
-| `db.password`          | Password to access Flipt database (URL takes precedence)                     |                              | v0.18.0 |
-| `db.max_idle_conn`     | The maximum number of connections in the idle connection pool                | 2                            | v0.17.0 |
-| `db.max_open_conn`     | The maximum number of open connections to the database                       | unlimited                    | v0.17.0 |
-| `db.conn_max_lifetime` | Sets the maximum amount of time in which a connection can be reused          | unlimited                    | v0.17.0 |
-| `db.migrations.path`   | Where the Flipt database migration files are kept                            | /etc/flipt/config/migrations |         |
+| Property               | Description                                                                               | Default                      | Since   |
+| ---------------------- | ----------------------------------------------------------------------------------------- | ---------------------------- | ------- |
+| `db.url`               | URL to access Flipt database                                                              | file:/var/opt/flipt/flipt.db |         |
+| `db.protocol`          | Protocol (Sqlite, MySQL, Postgres, CockroachDB) for Flipt database (URL takes precedence) |                              | v0.18.0 |
+| `db.host`              | Host to access Flipt database (URL takes precedence)                                      |                              | v0.18.0 |
+| `db.port`              | Port to access Flipt database (URL takes precedence)                                      |                              | v0.18.0 |
+| `db.name`              | Name of Flipt database (URL takes precedence)                                             |                              | v0.18.0 |
+| `db.user`              | User to access Flipt database (URL takes precedence)                                      |                              | v0.18.0 |
+| `db.password`          | Password to access Flipt database (URL takes precedence)                                  |                              | v0.18.0 |
+| `db.max_idle_conn`     | The maximum number of connections in the idle connection pool                             | 2                            | v0.17.0 |
+| `db.max_open_conn`     | The maximum number of open connections to the database                                    | unlimited                    | v0.17.0 |
+| `db.conn_max_lifetime` | Sets the maximum amount of time in which a connection can be reused                       | unlimited                    | v0.17.0 |
+| `db.migrations.path`   | Where the Flipt database migration files are kept                                         | /etc/flipt/config/migrations |         |
 
 ## Deprecations
 
@@ -129,9 +129,9 @@ export FLIPT_DB_URL="postgres://postgres@localhost:5432/flipt?sslmode=disable"
 
 ## Databases
 
-Flipt supports [SQLite](https://www.sqlite.org/index.html), [Postgres](https://www.postgresql.org/) and [MySQL](https://dev.mysql.com/) databases as of `v0.16.0`.
+Flipt supports [SQLite](https://www.sqlite.org/index.html), [Postgres](https://www.postgresql.org/), [CockroachDB](https://www.cockroachlabs.com/) and [MySQL](https://dev.mysql.com/) databases.
 
-SQLite is enabled by default for simplicity, however you should use Postgres or MySQL if you intend to run multiple copies of Flipt in a high availability configuration.
+SQLite is enabled by default for simplicity, however you should use Postgres, MySQL, or CockroachDB if you intend to run multiple copies of Flipt in a high availability configuration.
 
 The database connection can be configured as follows:
 
@@ -152,6 +152,17 @@ db:
 
 :::info
 The Postgres database must exist and be up and running before Flipt will be able to connect to it.
+:::
+
+### CockroachDB
+
+```yaml
+db:
+  url: cockroach://root@localhost:26257/flipt?sslmode=disable
+```
+
+:::info
+The CockroachDB database must exist and be up and running before Flipt will be able to connect to it.
 :::
 
 ### MySQL

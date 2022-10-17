@@ -60,12 +60,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: "https://www.flipt.io/img/banner_og.png",
-      // announcementBar: {
-      //   content: "🎉 Flipt v1.10.0 is out with support for Redis caching!",
-      //   backgroundColor: "#ded1f3",
-      //   textColor: "#091E42",
-      //   isCloseable: false,
-      // },
+      announcementBar: {
+        content: "🎉 Flipt v1.13.0 is out with support for CockroachDB!",
+        backgroundColor: "#ded1f3",
+        textColor: "#091E42",
+        isCloseable: false,
+      },
       navbar: {
         title: "Flipt",
         logo: {
