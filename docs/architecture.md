@@ -7,7 +7,7 @@ sidebar_position: 7
 
 The overall Flipt server architecture is shown in this diagram:
 
-![Flipt Architecture](./img/architecture/flipt.png)
+![Flipt Architecture](./img/architecture/flipt.svg)
 
 The Flipt application is made up of three main components:
 
