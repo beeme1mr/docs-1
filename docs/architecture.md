@@ -3,11 +3,20 @@ id: "architecture"
 sidebar_position: 7
 ---
 
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Architecture
 
 The overall Flipt server architecture is shown in this diagram:
 
-![Flipt Architecture](./img/architecture/flipt.svg)
+<ThemedImage
+alt="Flipt Architecture"
+sources={{
+    light: useBaseUrl('/img/flipt_light.svg'),
+    dark: useBaseUrl('/img/flipt_dark.svg'),
+  }}
+/>
 
 The Flipt application is made up of three main components:
 
